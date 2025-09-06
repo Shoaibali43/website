@@ -26,7 +26,6 @@
 header {
     position: fixed;
     top: 20px;
-    /* floating with margin */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -36,34 +35,61 @@ header {
 }
 
 /* Pill-shaped navbar */
+/* ✅ Navbar layout for desktop */
+/* ✅ Navbar layout for desktop */
+/* ✅ Navbar layout for desktop */
+/* ✅ Navbar layout for desktop */
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* left | logo | right */
     align-items: center;
     background: #2a1a13;
     padding: 12px 25px;
     border-radius: 40px;
-    /* ✅ pill shape */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-/* Left and right navs */
-/* Left and right navs */
+/* ✅ Left and right menus aligned */
+.nav-left {
+    justify-content: flex-start;
+}
+.nav-right {
+    justify-content: flex-end;
+}
+
+/* ✅ Nav lists look the same */
 .nav-left,
 .nav-right {
     list-style: none;
     display: flex;
-    /* ✅ makes items horizontal */
     flex-direction: row;
-    /* ✅ ensure row layout */
     align-items: center;
     gap: 20px;
-    /* space between items */
     margin: 0;
     padding: 0;
 }
 
-/* Links */
+/* ✅ Centered logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo .brand-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(41, 138, 32);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ✅ Links */
 .nav-left li a,
 .nav-right li a {
     text-decoration: none;
@@ -76,29 +102,8 @@ header {
 .nav-right li a:hover {
     color: #ffcc00;
 }
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    /* spacing between logo and text */
-}
 
-.logo img {
-    height: 50px;
-    /* adjust size as needed */
-}
-
-.logo .brand-name {
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(41, 138, 32);
-    /* customize color */
-    font-family: 'Segoe UI', sans-serif;
-}
-/* Center logo */
-
-
-/* CTA button */
+/* ✅ CTA button */
 .btn-cta {
     background: #43A047;
     color: #fff !important;
@@ -107,10 +112,82 @@ header {
     font-weight: bold;
     transition: background 0.3s;
 }
-
 .btn-cta:hover {
-    background: #41af46;
+    background: #46c04c;
 }
+
+/* ✅ Hamburger toggle (hidden on desktop) */
+.menu-toggle {
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+    display: none;
+}
+
+/* ✅ Mobile menu hidden by default */
+.nav-links {
+    display: none;   /* 🔥 ensures not visible on desktop */
+}
+
+/* ✅ Desktop view */
+@media (min-width: 769px) {
+    .nav-left,
+    .nav-right {
+        display: flex;
+    }
+
+    .menu-toggle,
+    .nav-links {
+        display: none !important; /* 🔥 force hidden on desktop */
+    }
+}
+
+/* ✅ Mobile Styles */
+@media (max-width: 768px) {
+    .nav-left,
+    .nav-right {
+        display: none; /* hide desktop menus */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #2a1a13;
+        border-radius: 15px;
+        width: 220px;
+        overflow: hidden;
+
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        display: flex; /* only visible on mobile */
+        flex-direction: column;
+    }
+    .nav-links a {
+         color: inherit;
+    text-decoration: none;
+    }
+
+    .nav-links ul {
+        list-style: none;
+        margin: 0;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links.active {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
        
 
         .team-section {
@@ -479,4 +556,5 @@ header {
 </body>
 
 </html>
+
 
