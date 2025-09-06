@@ -137,7 +137,6 @@ header {
     cursor: pointer;
     color: white;
     display: none;
-    margin-left: 10px;
     
 }
 
@@ -166,9 +165,14 @@ header {
         display: none; /* hide desktop menus */
     }
 
-    .menu-toggle {
+   .menu-toggle {
         display: block;
+        margin-left: 80px;
     }
+    .logo .brand-name {
+    display: inline-block;
+    white-space: nowrap;
+}
 
     .nav-links {
         position: absolute;
@@ -929,6 +933,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
