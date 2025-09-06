@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer & Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+           background-image: url('images/woods.jpg'); /* Replace with your image path */
+    background-size: cover; /* Make image cover the entire area */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+header {
+    position: fixed;
+    top: 20px;
+    /* floating with margin */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    z-index: 1000;
+    margin-top: 20px;
+}
+
+/* Pill-shaped navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2a1a13;
+    padding: 12px 25px;
+    border-radius: 40px;
+    /* ✅ pill shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Left and right navs */
+/* Left and right navs */
+.nav-left,
+.nav-right {
+    list-style: none;
+    display: flex;
+    /* ✅ makes items horizontal */
+    flex-direction: row;
+    /* ✅ ensure row layout */
+    align-items: center;
+    gap: 20px;
+    /* space between items */
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+.nav-left li a,
+.nav-right li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-left li a:hover,
+.nav-right li a:hover {
+    color: #ffcc00;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* spacing between logo and text */
+}
+
+.logo img {
+    height: 50px;
+    /* adjust size as needed */
+}
+
+.logo .brand-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(41, 138, 32);
+    /* customize color */
+    font-family: 'Segoe UI', sans-serif;
+}
+/* Center logo */
+
+
+/* CTA button */
+.btn-cta {
+    background: #43A047;
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-cta:hover {
+    background: #41af46;
+}
+       
+
+        .team-section {
+            margin: 60px 0;
+            margin-top: 100px;
+            padding-top: 100px;
+        }
+
+        .section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #2d3436;
+    position: fixed;
+    top: 100px; /* adjust based on your header’s actual height */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    z-index: 999; /* slightly below header */
+    width: 100%; /* optional: full width */
+    max-width: 1100px; /* align with header width if desired */
+}
+
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #6c5ce7, #00cec9);
+            border-radius: 2px;
+        }
+
+        .team-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .member-card {
+            width: 350px;
+            height: 450px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 15px;
+        }
+
+        .member-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: linear-gradient(45deg, #3D007580, #E5E4E280);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            color: white;
+        }
+
+        .member-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-role {
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: white;
+            color: #6c5ce7;
+            transform: translateY(-3px);
+        }
+
+        .card-back {
+            background: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .back-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, #3D007580, #E5E4E280);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .back-role {
+            font-size: 18px;
+            color: #636e72;
+            margin-bottom: 30px;
+        }
+
+        .back-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #2d3436;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info a{
+             color: inherit;
+    /* Keeps the text same as parent */
+    text-decoration: none;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #636e72;
+            
+        }
+
+        .floating-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            color: #3D007580;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 30px 0;
+            color: #636e72;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            
+            .team-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <ul class="nav-left">
+                <li><a href="#">Jammu</a></li>
+                <li><a href="#">Kashmir</a></li>
+                <li><a href="#">Bali</a></li>
+                <li><a href="#">Maldives</a></li>
+            </ul>
+    
+            <div class="logo">
+                <img src="images.png" alt="Baseej Travels Logo">
+                <span class="brand-name">Baseej Holidays</span>
+            </div>
+    
+            <ul class="nav-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="helloaz.html">Analytics</a></li>
+                <li><a href="haza.html">About us</a></li>
+                <li><a href="form.html" class="btn-cta">Start Booking</a></li>
+            </ul>
+        </div>
+    </header>
+
+        <section class="team-section">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-cards">
+                <!-- First Team Member -->
+                <div class="member-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="floating-label">Founder</span>
+                            <img src="d1_new.png" alt="Team Member" class="member-image">
+                            <h3 class="member-name">Mubashir<br>Mohi-ud-din</h3>
+                            <div class="member-role">Founder</div>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="back-name">Mubashir <br>Mohi-ud-din</h3>
+                            <div class="back-role">Founder</div>
+                            <p class="back-description">Visionary behind Baseej Holidays, committed to creating unique travel experiences that blend comfort, culture, and
+                            adventure. Passionate about exploring new destinations and making every journey memorable.</p>
+                            <div class="contact-info">
+                                <p><i class="fab fa-instagram"></i> 
+                                    <a href="https://instagram.com/mubashir_hussain_" target="_blank">@mubashir_hussain_</a></p>
+                                <p><i class="fab fa-whatsapp"></i>
+                                    <a href="https://wa.me/7006949411" target="_blank"> +917006949411 </a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Team Member -->
+                <div class="member-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="floating-label">Co-Founder</span>
+                            <img src="d2_new.png" alt="Team Member" class="member-image">
+                            <h3 class="member-name">Asrar Hussain</h3>
+                            <div class="member-role">Co-Founder</div>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <h3 class="back-name">Asrar Hussain</h3>
+                            <div class="back-role">Co-Founder</div>
+                            <p class="back-description">Strategic partner and travel enthusiast, dedicated to operational excellence and crafting seamless travel solutions.
+                            Focused on delivering personalized services and ensuring unforgettable customer experiences.</p>
+                            <div class="contact-info">
+                                <p><i class="fab fa-instagram"></i> 
+                                    <a href="https://instagram.com/asrarali_01" target="_blank">@asrarali_01</a></p>
+                                <p><i class="fab fa-whatsapp"></i>
+                                    <a href="https://wa.me/6006717808" target="_blank"> +916006717808</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Baseej Holidays. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for card entrance
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.member-card');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 + (index * 200));
+            });
+        });
+    </script>
+</body>
+</html>
