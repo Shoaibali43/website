@@ -48,32 +48,45 @@
 
     <!-- Navigation -->
 <header>
-  <div class="navbar">
+  <nav class="navbar">
+    <!-- Left nav -->
+    <ul class="nav-left">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Kashmir</a></li>
+      <li><a href="#">Bali</a></li>
+      <li><a href="#">Maldives</a></li>
+    </ul>
+
     <!-- Logo -->
     <div class="logo">
       <img src="images.png" alt="Baseej Travels Logo">
-      <span class="brand-name">Baseej Holidays</span>
+      <span class="brand-name">Baseej Travels</span>
     </div>
 
-    <!-- Hamburger (for mobile) -->
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <!-- Right nav (desktop) -->
+    <ul class="nav-right">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#" class="btn-cta">Book Now</a></li>
+    </ul>
 
-    <!-- ✅ Combined Navigation -->
-    <nav class="nav-links" id="nav-links">
+    <!-- Hamburger (mobile only) -->
+    <div class="menu-toggle">&#9776;</div>
+
+    <!-- Dropdown links (mobile only) -->
+    <div class="nav-links">
       <ul>
-        <li><a href="#">Jammu</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#">Kashmir</a></li>
         <li><a href="#">Bali</a></li>
         <li><a href="#">Maldives</a></li>
-        <li><a href="#">Home</a></li>
-        <li><a href="helloaz.html">Analytics</a></li>
-        <li><a href="haza.html">About us</a></li>
-        <li><a href="form.html" class="btn-cta">Start Booking</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="btn-cta">Book Now</a></li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
-
 
 
 
@@ -317,13 +330,8 @@
 
 <script>
 
-    const menuToggle = document.getElementById("menu-toggle");
-  const navLeft = document.querySelector(".nav-left");
-  const navRight = document.querySelector(".nav-right");
-
-  menuToggle.addEventListener("click", () => {
-    navLeft.classList.toggle("active");
-    navRight.classList.toggle("active");
+   document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
   });
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -457,6 +465,7 @@
 
 
 </html>
+
 
 
 
