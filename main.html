@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseej Travels</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <!-- WhatsApp -->
+        <span>
+            <a href="https://wa.me/917006949411" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 7006949411
+            </a>
+        </span>
+    
+        <!-- Email -->
+        <span>
+            <a href="mailto:info@baseejtravels.com">
+                <i class="fa-regular fa-envelope"></i> info@baseejtravels.com
+            </a>
+        </span>
+    
+        <!-- Phone Call -->
+        <span>
+            <a href="tel:+917006949411">
+                <i class="fa-solid fa-phone"></i> Call: +91 7006949411
+            </a>
+        </span>
+
+        <span class="notification-bar" id="notification-bar">
+        <i class="fas fa-circle-notch fa-spin"></i> Loading latest update...
+        </span>
+
+    </div>
+
+
+    <!-- Navigation -->
+<header>
+    <div class="navbar">
+        <ul class="nav-left">
+            <li><a href="#">Jammu</a></li>
+            <li><a href="#">Kashmir</a></li>
+            <li><a href="#">Bali</a></li>
+            <li><a href="#">Maldives</a></li>
+        </ul>
+
+        <div class="logo">
+            <img src="images.png" alt="Baseej Travels Logo">
+            <span class="brand-name">Baseej Holidays</span>
+        </div>
+
+        <ul class="nav-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="helloaz.html">Analytics</a></li>
+            <li><a href="haza.html">About us</a></li>
+            <li><a href="form.html" class="btn-cta">Start Booking</a></li>
+        </ul>
+    </div>
+</header>
+
+
+<section class="hero">
+    <div class="hero-text">
+        <h1 id="hero-heading">#ExploreKashmirWithBaseej</h1>
+        <p>Get up to <span class="highlight">60% Off</span> on exclusive Kashmir packages</p>
+        <p class="price">Starting from <del>Rs. 15,000</del> <strong>Rs. 7,499</strong></p>
+        <a href="form.html" class="btn">Get Bookings Instantly</a>
+    </div>
+</section>
+
+
+
+
+    <section class="about">
+        <h2>About Baseej Holidays</h2>
+    <p><strong>Baseej Travels is your trusted companion for Kashmir travel and holiday packages.</strong> With years of
+        experience as a leading travel agency in Kashmir, we know how to turn vacations into unforgettable memories. From
+        breathtaking valleys to snow-capped Himalayan peaks, our carefully designed <em>Kashmir tour packages</em> are
+        created to give you experiences that truly stay with you.</p>
+    
+    <p>We understand that every traveler is unique. That’s why we take the time to listen to what matters most to you—so
+        your journey feels personal, not just planned. Whether it’s sipping a warm cup of <em>Kahwa</em> by Dal Lake,
+        wandering through flower-filled Mughal Gardens, or finding peace in the quiet mountains of Gulmarg, Pahalgam, or
+        Sonmarg, we make sure your <em>Kashmir holiday</em> feels just right for you.</p>
+    
+    <p>With Baseej Travels, it’s not just about visiting Kashmir—it’s about living it. Explore at your own pace, in your own
+        way, with a trusted <em>Kashmir travel partner</em> by your side.</p>
+
+    </section>
+
+    <section class="gallery">
+        <h2>Top Destinations</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="kashmir.jpg" alt="Jammu">
+                <span>Kashmir</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="srinagar.jpg" alt="Srinagar">
+                <span>Srinagar</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="gulmarg.jpg" alt="Gulmarg">
+                <span>Gulmarg</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="pahalgam.jpg" alt="Pahalgam">
+                <span>Pahalgam</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="sonmarg.jpg" alt="Sonmarg">
+                <span>Sonmarg</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="ladakh.jpg" alt="Leh Ladakh">
+                <span>Leh Ladakh</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="jammu.jpg" alt="Jammu">
+                <span>Jammu</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="maldives.jpg" alt="Jammu">
+                <span>Maldives</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+            <div class="gallery-item">
+                <img src="bali.jpg" alt="Jammu">
+                <span>Bali</span>
+                <a href="form.html" class="book-now">Book Now</a>
+            </div>
+        </div>
+    </section>
+<!-- why choose us? -->
+        <section class="why-choose-us">
+            <div class="containered">
+                <div class="section-headerd">
+                    <h2>WHY TRUST US?</h2>
+                    <p>Discover why thousands of travelers trust us for their memorable holidays</p>
+                </div>
+        
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="icon-container">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Specialized</h3>
+                        <p>We may be a young agency, but in just a few years we’ve built a reputation for creating truly memorable holidays. With a
+                        team of passionate travel specialists, we’re here to make your next journey seamless, exciting, and unforgettable</p>
+                    </div>
+        
+                    <div class="feature-card">
+                        <div class="icon-container">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h3>Best Prices</h3>
+                        <p>With Baseej Holidays, you’ll enjoy the best deals and discounts while still experiencing the warm, reliable service you
+                        deserve.
+                        </p>
+                    </div>
+        
+                    <div class="feature-card">
+                        <div class="icon-container">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Trust & Safety</h3>
+                        <p>We’re a registered travel agency, and your safety will always be our top priority.</p>
+                    </div>
+        
+                    <div class="feature-card">
+                        <div class="icon-container">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24X7 Support</h3>
+                        <p>Our caring team is with you at every step, from planning your trip to enjoying it and beyond. You can reach us anytime,
+                        day or night, with our 24/7 support.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Decorative elements -->
+            <div class="decoration decoration-1">
+                <i class="fas fa-mountain"></i>
+            </div>
+            <div class="decoration decoration-2">
+                <i class="fas fa-umbrella-beach"></i>
+            </div>
+        </section>
+
+        <section class="our-office-section">
+            <div class="containerem">
+                <div class="section-headerz">
+                    <h2>Our Office</h2>
+                    <p>Visit us or get in touch - we'd love to help plan your next adventure</p>
+                </div>
+        
+                <div class="office-content">
+                    <!-- Office Carousel -->
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img src="baseej1.png" alt="Office Interior">
+                                    <div class="carousel-caption">
+                                        <p>Exterior</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="baseej2.png" alt="Office Meeting Area">
+                                    <div class="carousel-caption">
+                                        <p>Interior</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="baseej3.png" alt="Office Exterior">
+                                    <div class="carousel-caption">
+                                        <p>Welcome Area</p>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="carousel-nav">
+                                <div class="carousel-btn prev-btn">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="carousel-btn next-btn">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+        
+                            <div class="carousel-controls">
+                                <div class="carousel-control active"></div>
+                                <div class="carousel-control"></div>
+                                <div class="carousel-control"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Address Card -->
+                    <div class="address-card">
+                        <h3>Visit Us</h3>
+        
+                        <div class="address-info">
+                            <div class="address-line">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="address-text">
+                                    3rd Floor, Al Hassnain Complex<br>
+                                    Budgam, Jammu and Kashmir 191111
+                                </div>
+                            </div>
+        
+                            <div class="address-line">
+                                <i class="fas fa-clock"></i>
+                                <div class="address-text">
+                                    Open Monday–Saturday, 10 am–5 pm <br>
+                                    Closed Sunday
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="contact-info">
+                            <div class="address-line">
+                                <i class="fas fa-phone"></i>
+                                <div class="address-text"><a href="tel:7006949411">+91 7006949411</a></div>
+                            </div>
+                            
+        
+                            <div class="address-line">
+                                <i class="fas fa-envelope"></i>
+                                <div class="address-text">info@baseejtravels.com</div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+
+        <!-- end-->
+
+    <footer>
+        <p>&copy; 2025 Baseej Holidays. All rights reserved.</p>
+    </footer>
+
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i> Chat with us
+    </a>
+
+</body>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselControls = document.querySelectorAll('.carousel-control');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+
+            let currentIndex = 0;
+            const itemCount = carouselItems.length;
+
+            // Update carousel position
+            function updateCarousel() {
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Update controls
+                carouselControls.forEach((control, index) => {
+                    if (index === currentIndex) {
+                        control.classList.add('active');
+                    } else {
+                        control.classList.remove('active');
+                    }
+                });
+            }
+
+            // Next slide
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % itemCount;
+                updateCarousel();
+            }
+
+            // Previous slide
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+                updateCarousel();
+            }
+
+            // Add event listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Add click events to controls
+            carouselControls.forEach((control, index) => {
+                control.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+
+            // Auto slide
+            setInterval(nextSlide, 5000);
+        });
+    
+
+     const firebaseConfig = {
+            apiKey: "AIzaSyBqbJGcNHb3afLXmhQbwm3BDa6A4mNtlGQ",
+            authDomain: "baseejholidays-382ad.firebaseapp.com",
+            databaseURL: "https://baseejholidays-382ad-default-rtdb.firebaseio.com",
+            projectId: "baseejholidays-382ad",
+            storageBucket: "baseejholidays-382ad.firebasestorage.app",
+            messagingSenderId: "562244960654",
+            appId: "1:562244960654:web:172c1007f1c6781988e4df",
+            measurementId: "G-VXV8N2CQF9"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        const notificationBar = document.getElementById("notification-bar");
+
+        // Real-time listener for latest notification
+        db.collection("marqueeNotifications")
+            .orderBy("timestamp", "desc")
+            .limit(1)
+            .onSnapshot((snapshot) => {
+                if (!snapshot.empty) {
+                    const data = snapshot.docs[0].data();
+                    const text = data.message;
+                    const url = data.url;
+
+                    if (url) {
+                        notificationBar.innerHTML = `<i class="fas fa-bullhorn"></i> <a href="${url}" target="_blank">${text}</a>`;
+                    } else {
+                        notificationBar.innerHTML = `<i class="fas fa-bullhorn"></i> ${text}`;
+                    }
+                } else {
+                    notificationBar.innerHTML = `<i class="fas fa-info-circle"></i> No updates available.`;
+                }
+            }, (error) => {
+                console.error("Error:", error);
+                notificationBar.innerHTML = `<i class="fas fa-exclamation-triangle"></i> Error loading updates.`;
+            });
+            
+    const texts = [
+        "#ExploreKashmirWithBaseej",
+        "#TourwithBaseej",
+        "#ExploreKashmir",
+        "#ExploreParadise"
+    ];
+
+    const heading = document.getElementById("hero-heading");
+    let index = 0;
+
+    function changeText() {
+        // Slide out to the left
+        gsap.to(heading, {
+            x: -200,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.in", // smooth ease out
+            onComplete: () => {
+                // Update text
+                index = (index + 1) % texts.length;
+                heading.textContent = texts[index];
+
+                // Slide in from right with bounce effect
+                gsap.fromTo(heading,
+                    { x: 200, opacity: 0 },
+                    { x: 0, opacity: 1, duration: 0.9, ease: "elastic.out(1, 0.5)" }
+                );
+            }
+        });
+    }
+
+    // Change text every 3 seconds
+    setInterval(changeText, 3000);
+</script>
+
+
+</html>
