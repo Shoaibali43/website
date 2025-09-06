@@ -57,23 +57,19 @@ header {
     align-items: center;
     background: #2a1a13;
     padding: 12px 25px;
-    border-radius: 40px;
-    /* ✅ pill shape */
+    border-radius: 40px; /* ✅ pill shape */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative; /* so dropdown works */
 }
 
-/* Left and right navs */
 /* Left and right navs */
 .nav-left,
 .nav-right {
     list-style: none;
     display: flex;
-    /* ✅ makes items horizontal */
     flex-direction: row;
-    /* ✅ ensure row layout */
     align-items: center;
     gap: 20px;
-    /* space between items */
     margin: 0;
     padding: 0;
 }
@@ -91,27 +87,23 @@ header {
 .nav-right li a:hover {
     color: #ffcc00;
 }
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* spacing between logo and text */
 }
 
 .logo img {
     height: 50px;
-    /* adjust size as needed */
 }
 
 .logo .brand-name {
     font-size: 22px;
     font-weight: bold;
     color: rgb(41, 138, 32);
-    /* customize color */
     font-family: 'Segoe UI', sans-serif;
 }
-/* Center logo */
-
 
 /* CTA button */
 .btn-cta {
@@ -126,6 +118,42 @@ header {
 .btn-cta:hover {
     background: #46c04c;
 }
+
+/* ✅ Hamburger Menu (hidden by default) */
+.menu-toggle {
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+    display: none; /* only mobile */
+}
+
+/* ✅ Mobile Styles */
+@media (max-width: 768px) {
+    .nav-left,
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        background: #2a1a13;
+        position: absolute;
+        top: 70px; /* below navbar */
+        right: 20px;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        display: none; /* hidden by default */
+    }
+
+    .nav-left.active,
+    .nav-right.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
 
 /* Hero */
 .hero {
@@ -791,3 +819,4 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
