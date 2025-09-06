@@ -272,6 +272,55 @@ header {
 .btn:hover {
     background: #41b947;
 }
+}
+h3 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+h3 span.text {
+    padding: 0;
+    padding-right: 4px;
+    border-right: 2px solid #747474;
+    animation: blink 0.75s infinite;
+}
+
+h3 .blue {
+    color: #4480ff;
+}
+
+h3 .green {
+    color: #4caf50;
+}
+
+h3 .yellow {
+    color: #f4b400;
+}
+
+h3 .red {
+    color: #f44336;
+}
+@keyframes blink {
+    from {
+        border: none;
+    }
+
+    to {
+        border-color: 2px solid #747474;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    h3 {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 400px) {
+    h3 {
+        font-size: 20px;
+    }
+}
 
 /* About */
 .about {
@@ -876,6 +925,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
