@@ -127,8 +127,17 @@ header {
 }
 
 /* ================= MOBILE ================= */
+/* Mobile Styles */
 @media (max-width: 768px) {
-    /* Wrap nav links for mobile dropdown */
+    .nav-left,
+    .nav-right {
+        display: none; /* hide desktop menus */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-links {
         position: absolute;
         top: 70px;
@@ -136,33 +145,26 @@ header {
         background: #2a1a13;
         border-radius: 15px;
         width: 220px;
-        padding: 15px;
-        display: none;
-        flex-direction: column;
+        overflow: hidden;
+        
+        /* animation prep */
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
     }
 
     .nav-links ul {
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 15px;
         display: flex;
         flex-direction: column;
         gap: 12px;
     }
 
     .nav-links.active {
-        display: flex;
-    }
-
-    /* Show hamburger */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* Hide left/right links by default on mobile */
-    .nav-left,
-    .nav-right {
-        display: none;
+        max-height: 500px;  /* enough for all items */
+        opacity: 1;
     }
 }
 
@@ -834,6 +836,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
