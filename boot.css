@@ -1,0 +1,106 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5) blur(2px);
+    /* darken + subtle blur */
+}
+
+/* Boot screen container */
+.boot-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo styling */
+/* Logo styling */
+.logo-container {
+    animation: fadeInUp 2s ease-out;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    /* simple solid white */
+}
+
+.byline {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #cccccc;
+    /* softer gray */
+    letter-spacing: 1px;
+    animation: fadeIn 3s ease-in forwards;
+}
+
+/* Particles container */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.logo-img {
+    display: block;
+    margin: 0 auto 10px auto;
+    /* center + space below */
+    width: 80px;
+    /* smaller size */
+    height: auto;
+}
