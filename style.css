@@ -51,9 +51,10 @@ header {
 }
 
 /* Pill-shaped navbar */
+/* ✅ Navbar layout for desktop */
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* left | logo | right */
     align-items: center;
     background: #2a1a13;
     padding: 12px 25px;
@@ -62,7 +63,15 @@ header {
     position: relative;
 }
 
-/* Left + right links (desktop) */
+/* ✅ Left and right menus aligned */
+.nav-left {
+    justify-content: flex-start;
+}
+.nav-right {
+    justify-content: flex-end;
+}
+
+/* ✅ Nav lists look the same */
 .nav-left,
 .nav-right {
     list-style: none;
@@ -74,24 +83,12 @@ header {
     padding: 0;
 }
 
-.nav-left li a,
-.nav-right li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-left li a:hover,
-.nav-right li a:hover {
-    color: #ffcc00;
-}
-
-/* Logo */
+/* ✅ Centered logo */
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: center;
 }
 
 .logo img {
@@ -105,7 +102,21 @@ header {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* CTA button */
+/* ✅ Links */
+.nav-left li a,
+.nav-right li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-left li a:hover,
+.nav-right li a:hover {
+    color: #ffcc00;
+}
+
+/* ✅ CTA button */
 .btn-cta {
     background: #43A047;
     color: #fff !important;
@@ -118,7 +129,7 @@ header {
     background: #46c04c;
 }
 
-/* Hamburger (hidden on desktop) */
+/* ✅ Hamburger toggle (hidden on desktop) */
 .menu-toggle {
     font-size: 26px;
     cursor: pointer;
@@ -126,8 +137,7 @@ header {
     display: none;
 }
 
-/* ================= MOBILE ================= */
-/* Mobile Styles */
+/* ✅ Mobile Styles */
 @media (max-width: 768px) {
     .nav-left,
     .nav-right {
@@ -146,11 +156,12 @@ header {
         border-radius: 15px;
         width: 220px;
         overflow: hidden;
-        
-        /* animation prep */
+
         max-height: 0;
         opacity: 0;
         transition: max-height 0.4s ease, opacity 0.4s ease;
+        display: flex;
+        flex-direction: column;
     }
 
     .nav-links ul {
@@ -163,10 +174,11 @@ header {
     }
 
     .nav-links.active {
-        max-height: 500px;  /* enough for all items */
+        max-height: 500px;
         opacity: 1;
     }
 }
+
 
 
 
@@ -836,6 +848,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
