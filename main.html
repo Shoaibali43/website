@@ -318,6 +318,15 @@
 
 <script>
 
+    const menuToggle = document.getElementById("menu-toggle");
+  const navLeft = document.querySelector(".nav-left");
+  const navRight = document.querySelector(".nav-right");
+
+  menuToggle.addEventListener("click", () => {
+    navLeft.classList.toggle("active");
+    navRight.classList.toggle("active");
+  });
+
     document.addEventListener('DOMContentLoaded', function () {
             const carouselInner = document.querySelector('.carousel-inner');
             const carouselItems = document.querySelectorAll('.carousel-item');
@@ -449,3 +458,4 @@
 
 
 </html>
+
