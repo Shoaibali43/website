@@ -51,18 +51,19 @@ header {
 }
 
 /* Pill-shaped navbar */
+/* ✅ Keep your original navbar styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #2a1a13;
     padding: 12px 25px;
-    border-radius: 40px; /* ✅ pill shape */
+    border-radius: 40px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative; /* so dropdown works */
+    position: relative;
 }
 
-/* Left and right navs */
+/* ✅ Left and right navs (desktop) */
 .nav-left,
 .nav-right {
     list-style: none;
@@ -74,7 +75,6 @@ header {
     padding: 0;
 }
 
-/* Links */
 .nav-left li a,
 .nav-right li a {
     text-decoration: none;
@@ -105,7 +105,7 @@ header {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* CTA button */
+/* ✅ CTA button */
 .btn-cta {
     background: #43A047;
     color: #fff !important;
@@ -114,45 +114,54 @@ header {
     font-weight: bold;
     transition: background 0.3s;
 }
-
 .btn-cta:hover {
     background: #46c04c;
 }
 
-/* ✅ Hamburger Menu (hidden by default) */
+/* ✅ Hamburger toggle (hidden on desktop) */
 .menu-toggle {
     font-size: 26px;
     cursor: pointer;
     color: white;
-    display: none; /* only mobile */
+    display: none;
 }
 
 /* ✅ Mobile Styles */
 @media (max-width: 768px) {
+    /* Stack logo + hamburger in one row */
+    .navbar {
+        justify-content: space-between;
+    }
+
+    /* Hide navs by default */
     .nav-left,
     .nav-right {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
+        gap: 15px;
         background: #2a1a13;
         position: absolute;
-        top: 70px; /* below navbar */
+        top: 70px;
         right: 20px;
-        padding: 15px;
+        padding: 20px;
         border-radius: 15px;
+        width: 220px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        display: none; /* hidden by default */
+        display: none;
     }
 
+    /* Show navs when active */
     .nav-left.active,
     .nav-right.active {
         display: flex;
     }
 
+    /* Show hamburger */
     .menu-toggle {
         display: block;
     }
 }
+
 
 
 /* Hero */
@@ -819,4 +828,5 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
