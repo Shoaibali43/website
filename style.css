@@ -102,6 +102,8 @@ header {
     font-weight: bold;
     color: rgb(41, 138, 32);
     font-family: 'Segoe UI', sans-serif;
+    white-space: nowrap;   /* Prevent line breaks */
+    display: inline-block;
 }
 
 /* ✅ Links */
@@ -925,6 +927,7 @@ h3 .red {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
