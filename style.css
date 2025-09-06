@@ -19,6 +19,12 @@ body {
     display: flex;
     justify-content: space-around;
     font-size: 0.9rem;
+
+    position: fixed; /* Keeps it fixed on scroll */
+    top: 0;          /* Position it at the top */
+    left: 0;
+    width: 100%;     /* Full width of the viewport */
+    z-index: 9999; 
 }
 .top-bar a {
     color: inherit;
@@ -877,6 +883,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
