@@ -210,20 +210,15 @@ header {
     z-index: 999; /* slightly below header */
     width: 100%; /* optional: full width */
     max-width: 1100px; /* align with header width if desired */
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, #6c5ce7, #00cec9);
-            border-radius: 2px;
-        }
+       .section-title.hidden {
+    opacity: 0;
+    transform: translate(-50%, -20px); /* moves slightly up while fading */
+    pointer-events: none;
+}
 
         .team-cards {
             display: flex;
@@ -529,6 +524,22 @@ header {
     </div>
 
     <script>
+let lastScrollTop = 0;
+const sectionTitle = document.querySelector('.section-title');
+
+window.addEventListener('scroll', function() {
+    let currentScroll = window.scrollY;
+
+    if (currentScroll > lastScrollTop) {
+        // scrolling down -> hide
+        sectionTitle.classList.add('hidden');
+    } else {
+        // scrolling up -> show
+        sectionTitle.classList.remove('hidden');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // avoid negative values
+});
 
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -560,6 +571,7 @@ header {
 </body>
 
 </html>
+
 
 
 
