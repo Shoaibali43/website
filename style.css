@@ -38,10 +38,10 @@ body {
 
 /* Header */
 /* Navbar container */
+/* ================= HEADER ================= */
 header {
     position: fixed;
     top: 20px;
-    /* floating with margin */
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
@@ -51,7 +51,6 @@ header {
 }
 
 /* Pill-shaped navbar */
-/* ✅ Keep your original navbar styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -63,7 +62,7 @@ header {
     position: relative;
 }
 
-/* ✅ Left and right navs (desktop) */
+/* Left + right links (desktop) */
 .nav-left,
 .nav-right {
     list-style: none;
@@ -88,6 +87,7 @@ header {
     color: #ffcc00;
 }
 
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -105,7 +105,7 @@ header {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* ✅ CTA button */
+/* CTA button */
 .btn-cta {
     background: #43A047;
     color: #fff !important;
@@ -118,7 +118,7 @@ header {
     background: #46c04c;
 }
 
-/* ✅ Hamburger toggle (hidden on desktop) */
+/* Hamburger (hidden on desktop) */
 .menu-toggle {
     font-size: 26px;
     cursor: pointer;
@@ -126,9 +126,9 @@ header {
     display: none;
 }
 
-/* ✅ Mobile Styles */
-/* Mobile Styles */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+    /* Wrap nav links for mobile dropdown */
     .nav-links {
         position: absolute;
         top: 70px;
@@ -154,10 +154,18 @@ header {
         display: flex;
     }
 
+    /* Show hamburger */
     .menu-toggle {
         display: block;
     }
+
+    /* Hide left/right links by default on mobile */
+    .nav-left,
+    .nav-right {
+        display: none;
+    }
 }
+
 
 
 
@@ -826,6 +834,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
