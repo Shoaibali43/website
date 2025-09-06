@@ -190,7 +190,7 @@ header {
         flex-direction: column;
     }
     .nav-links a {
-         color: inherit;
+         color: white;
     text-decoration: none;
     }
 
@@ -933,6 +933,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
