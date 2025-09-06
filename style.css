@@ -270,7 +270,7 @@ header {
     font-weight: bold;
     display: inline-block;
     transition: background 0.3s;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .btn:hover {
@@ -929,6 +929,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
