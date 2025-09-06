@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Redirect to index.html after 10 seconds
     setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
     }, 8000);
 });
+
