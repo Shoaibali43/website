@@ -184,6 +184,10 @@ header {
         display: flex; /* only visible on mobile */
         flex-direction: column;
     }
+    .nav-links a {
+         color: inherit;
+    text-decoration: none;
+    }
 
     .nav-links ul {
         list-style: none;
@@ -197,8 +201,6 @@ header {
     .nav-links.active {
         max-height: 500px;
         opacity: 1;
-        text-decoration: none;
-        color:inherit;
     }
 }
 
@@ -875,6 +877,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
