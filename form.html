@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseej Holidays Booking Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-image: url('images/snow.jpg'); /* Replace with your image path */
+    background-size: cover; /* Make image cover the entire area */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+            margin: 40px 0;
+        }
+
+        .form-header {
+            background: linear-gradient(
+  180deg, 
+  rgba(34, 139, 34, 0.5),
+  rgba(0, 100, 0, 0.5)    
+);
+
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-icon {
+            font-size: 36px;
+            margin-right: 12px;
+            background: white;
+            color: #2196F3;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .form-header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 15px;
+            z-index: 2;
+        }
+
+        .step.active .step-circle {
+            background: white;
+            color: #228b22c7;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-line {
+            position: absolute;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+            top: 20px;
+            width: 70px;
+            left: 55px;
+        }
+
+        .step-label {
+            margin-top: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-body {
+            padding: 30px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #228b22c0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .form-group {
+            flex: 1 0 300px;
+            margin: 0 10px 20px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #2196F3;
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-next {
+            background: linear-gradient(
+  45deg,
+  #228B2280,
+  #00640080
+);
+
+            color: white;
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+
+        .btn-next:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
+        }
+
+        .btn-back {
+            background: #f5f5f5;
+            color: #555;
+        }
+
+        .btn-back:hover {
+            background: #e0e0e0;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .date-input-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .date-input-group select {
+            flex: 1;
+        }
+
+        @media (max-width: 600px) {
+            .form-header {
+                padding: 20px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
+            .form-header h1 {
+                font-size: 20px;
+            }
+
+            .form-body {
+                padding: 20px;
+            }
+
+            .form-group {
+                flex: 1 0 100%;
+            }
+
+            .step-line {
+                width: 40px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .date-input-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* iOS-style dialog */
+        .backdrop {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.16);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+        }
+
+        .backdrop.show {
+            display: flex;
+        }
+
+        .ios-alert {
+            background: #fff;
+            border-radius: 14px;
+            padding: 18px 16px;
+            text-align: center;
+            max-width: 300px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, .2);
+            transform: translateY(8px) scale(.96);
+            opacity: 0;
+            transition: .2s ease;
+        }
+
+        .backdrop.show .ios-alert {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .ios-title {
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .ios-message {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 14px;
+        }
+
+        .ios-btn {
+            border: none;
+            border-radius: 10px;
+            padding: 10px 18px;
+            background: #eaf2ff;
+            color: #228b22d7;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .logo-text a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="form-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images.png" alt="Baseej Travels Logo">
+                </div>
+                <div class="logo-text"><i class="fas fa-arrow-left"></i><a href="index.html">Go to Main Page </a></div>
+            </div>
+            <h1>BOOKING FORM</h1>
+            <div class="progress-bar">
+                <div class="step active">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Details</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Trip Info</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Review</div>
+                </div>
+            </div>
+        </div>
+
+        <form id="bookingForm" class="form-body" action="https://formspree.io/f/mblapgee" method="POST">
+            <!-- Step 1: Personal Details -->
+            <div class="form-step active" id="step1">
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-user"></i>
+                        PERSONAL DETAILS
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name (as per Offical Records)</label>
+                            <input type="text" id="full-name" name="full-name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Your Address</label>
+                            <input type="text" id="address" name="address" placeholder="Your complete address" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <div></div> <!-- Empty div for spacing -->
+                    <button type="button" class="btn btn-next" onclick="showStep(2)">Next <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 2: Trip Information -->
+            <div class="form-step" id="step2">
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-calendar-alt"></i>
+                        TRIP DATES
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from-date">From Date</label>
+                            <input type="date" id="from-date" name="from-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="to-date">To Date</label>
+                            <input type="date" id="to-date" name="to-date" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-users"></i>
+                        TRAVELERS INFORMATION
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="members">Number of Members</label>
+                            <select id="members" name="members" required>
+                                <option value="" disabled selected>Select number of travelers</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value=">6">More than 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <select id="destination" name="destination" required>
+                                <option value="" disabled selected>Choose your destination</option>
+                                <option value="Srinagar">Srinagar</option>
+                                <option value="Kashmir">Kashmir</option>
+                                <option value="Gulmarg">Gulmarg</option>
+                                <option value="Sonmarg">Sonmarg</option>
+                                <option value="Pahalgam">Pahalgam</option>
+                                <option value="Ladakh">Ladakh</option>
+                                <option value="Jammu">Jammu</option>
+                                <option value="Maldives">Maldives</option>
+                                <option value="Bali">Bali</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-back" onclick="showStep(1)"><i class="fas fa-arrow-left"></i>
+                        Back</button>
+                    <button type="button" class="btn btn-next" onclick="showStep(3)">Next <i
+                            class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 3: Review -->
+            <div class="form-step" id="step3">
+                <div class="form-section">
+                    <div class="section-title">
+                        <i class="fas fa-check-circle"></i>
+                        REVIEW YOUR INFORMATION
+                    </div>
+                    <div id="review-content">
+                        <!-- Review content will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn btn-back" onclick="showStep(2)"><i class="fas fa-arrow-left"></i>
+                        Back</button>
+                    <button type="submit" class="btn btn-next">Submit Booking <i
+                            class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Dialog -->
+    <div class="backdrop" id="backdrop">
+        <div class="ios-alert">
+            <div class="ios-title">Booking Submitted</div>
+            <div class="ios-message">We'll contact you to confirm your booking within few hours.</div>
+            <div class="ios-actions">
+                <button class="ios-btn primary" id="okBtn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Form step navigation
+        function showStep(stepNumber) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Show the selected step
+            document.getElementById(`step${stepNumber}`).classList.add('active');
+
+            // Update progress bar
+            document.querySelectorAll('.step').forEach((step, index) => {
+                if (index < stepNumber) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            // If it's the review step, generate the review content
+            if (stepNumber === 3) {
+                generateReviewContent();
+            }
+        }
+
+        // Generate review content
+        function generateReviewContent() {
+            const reviewContent = document.getElementById('review-content');
+
+            // Get form values
+            const fullName = document.getElementById('full-name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const fromDate = document.getElementById('from-date').value;
+            const toDate = document.getElementById('to-date').value;
+            const members = document.getElementById('members').value;
+            const destination = document.getElementById('destination').value;
+
+            // Format the dates
+            const formattedFromDate = new Date(fromDate).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const formattedToDate = new Date(toDate).toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Generate HTML for review
+            reviewContent.innerHTML = `
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 10px;">
+                    <h3 style="margin-bottom: 15px; color: #0D47A1;">Personal Details</h3>
+                    <p><strong>Full Name:</strong> ${fullName}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Address:</strong> ${address}</p>
+                    
+                    <h3 style="margin: 20px 0 15px; color: #0D47A1;">Trip Information</h3>
+                    <p><strong>From Date:</strong> ${formattedFromDate}</p>
+                    <p><strong>To Date:</strong> ${formattedToDate}</p>
+                    <p><strong>Number of Travelers:</strong> ${members}</p>
+                    <p><strong>Destination:</strong> ${destination}</p>
+                </div>
+            `;
+        }
+
+        // Form submission
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Submit the form to Formspree
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Show success message
+                        document.getElementById('backdrop').classList.add('show');
+
+                        // Reset form after successful submission
+                        form.reset();
+
+                        // Reset to first step
+                        showStep(1);
+                    } else {
+                        // Handle error
+                        alert('There was a problem submitting your booking. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('There was a problem submitting your booking. Please try again.');
+                    console.error('Error:', error);
+                });
+        });
+
+        // Close dialog
+        document.getElementById('okBtn').addEventListener('click', function () {
+            document.getElementById('backdrop').classList.remove('show');
+        });
+
+        // Set minimum date to today
+        const fromDateInput = document.getElementById('from-date');
+        const toDateInput = document.getElementById('to-date');
+        const today = new Date().toISOString().split('T')[0];
+        fromDateInput.min = today;
+
+        // Set to-date minimum based on from-date
+        fromDateInput.addEventListener('change', function () {
+            toDateInput.min = this.value;
+        });
+    </script>
+</body>
+
+</html>
