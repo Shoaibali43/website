@@ -330,9 +330,12 @@
 
 <script>
 
-   document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-  });
+   // Toggle dropdown with animation
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+});
+
 
     document.addEventListener('DOMContentLoaded', function () {
             const carouselInner = document.querySelector('.carousel-inner');
@@ -465,6 +468,7 @@
 
 
 </html>
+
 
 
 
