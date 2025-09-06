@@ -340,28 +340,46 @@ header {
     </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <ul class="nav-left">
-                <li><a href="#">Jammu</a></li>
-                <li><a href="#">Kashmir</a></li>
-                <li><a href="#">Bali</a></li>
-                <li><a href="#">Maldives</a></li>
-            </ul>
-    
-            <div class="logo">
-                <img src="images.png" alt="Baseej Travels Logo">
-                <span class="brand-name">Baseej Holidays</span>
-            </div>
-    
-            <ul class="nav-right">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="helloaz.html">Analytics</a></li>
-                <li><a href="haza.html">About us</a></li>
-                <li><a href="form.html" class="btn-cta">Start Booking</a></li>
-            </ul>
-        </div>
-    </header>
+   <header>
+  <nav class="navbar">
+    <!-- Left nav -->
+    <ul class="nav-left">
+      <li><a href="main.html">Home</a></li>
+      <li><a href="#">Kashmir</a></li>
+      <li><a href="#">Bali</a></li>
+      <li><a href="#">Maldives</a></li>
+    </ul>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images.png" alt="Baseej Travels Logo">
+      <span class="brand-name">Baseej Travels</span>
+    </div>
+
+    <!-- Right nav (desktop) -->
+    <ul class="nav-right">
+      <li><a href="#">About</a></li>
+      <li><a href="helloaz.html">Analytics</a></li>
+      <li><a href="form.html" class="btn-cta">Book Now</a></li>
+    </ul>
+
+    <!-- Hamburger (mobile only) -->
+    <div class="menu-toggle">&#9776;</div>
+
+    <!-- Dropdown links (mobile only) -->
+    <div class="nav-links">
+      <ul>
+        <li><a href="main.html">Home</a></li>
+        <li><a href="#">Kashmir</a></li>
+        <li><a href="#">Bali</a></li>
+        <li><a href="#">Maldives</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="helloaz.html">Analytics</a></li>
+        <li><a href="form.html" class="btn-cta">Book Now</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
         <section class="team-section">
             <h2 class="section-title">Our Team</h2>
@@ -447,4 +465,5 @@ header {
         });
     </script>
 </body>
+
 </html>
