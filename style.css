@@ -53,6 +53,7 @@ header {
 /* Pill-shaped navbar */
 /* ✅ Navbar layout for desktop */
 /* ✅ Navbar layout for desktop */
+/* ✅ Navbar layout for desktop */
 .navbar {
     display: grid;
     grid-template-columns: 1fr auto 1fr; /* left | logo | right */
@@ -179,6 +180,7 @@ header {
         opacity: 1;
     }
 }
+
 
 
 
@@ -851,6 +853,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
