@@ -831,7 +831,8 @@ header {
                                        border-radius: 16px;
                                        padding: 35px 30px;
                                        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-                                       height: 400px;
+                                       min-height: 400px;
+                                       height: auto; 
                                        display: flex;
                                        flex-direction: column;
                                        justify-content: center;
@@ -896,9 +897,8 @@ header {
                                        }
                 
                                        .carousel-container,
-                                       .address-card,
-                                       .map-container {
-                                           height: 350px;
+                                       .address-card {
+                                           min-height: 350px;
                                        }
                                    }
                 
@@ -913,7 +913,7 @@ header {
                 
                                        .carousel-container,
                                        .address-card{
-                                           height: 300px;
+                                           min-height: 300px;
                                        }
                 
                                        .carousel-btn {
@@ -933,7 +933,7 @@ header {
                 
                                        .carousel-container,
                                        .address-card {
-                                           height: 250px;
+                                           min-height: 250px;
                                        }
                 
                                        .address-card {
@@ -953,6 +953,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
