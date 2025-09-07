@@ -944,6 +944,15 @@ header {
                                            font-size: 1.5rem;
                                        }
                                    }
+.our-office-section,
+.faq-section {
+  position: relative;
+  z-index: 10;
+  background: white;
+  margin-top: 80px; /* ensures they’re below hero/header */
+  padding: 60px 20px;
+}
+
 
 
   footer {
@@ -954,6 +963,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
