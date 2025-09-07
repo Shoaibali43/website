@@ -945,78 +945,6 @@ header {
                                        }
                                    }
 
-.faq-section {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-
-        .faq-header {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #37474f;
-        }
-
-        /* Base style for accordion buttons */
-        .accordion-button {
-            color: white;
-            font-weight: 500;
-            border-radius: 8px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-            transition: background 0.3s ease;
-        }
-
-        /* Different green shades for each FAQ */
-        .btn-green-1 {
-            background: #388e3c;
-            /* Material Green 700 */
-        }
-
-        .btn-green-1:not(.collapsed) {
-            background: #2e7d32;
-            /* Darker when open */
-        }
-
-        .btn-green-2 {
-            background: #43a047;
-            /* Material Green 600 */
-        }
-
-        .btn-green-2:not(.collapsed) {
-            background: #388e3c;
-        }
-
-        .btn-green-3 {
-            background: #4caf50;
-            /* Material Green 500 */
-        }
-
-        .btn-green-3:not(.collapsed) {
-            background: #43a047;
-        }
-
-        .btn-green-4 {
-            background: #66bb6a;
-            /* Material Green 400 */
-            color: #fff;
-        }
-
-        .btn-green-4:not(.collapsed) {
-            background: #4caf50;
-        }
-
-        /* Focus effect */
-        .accordion-button:focus {
-            box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
-        }
-
-        .accordion-body {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-            color: #333;
-        }
 
   footer {
       text-align: center;
@@ -1026,6 +954,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
