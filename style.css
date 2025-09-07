@@ -896,7 +896,7 @@ header {
                                            gap: 30px;
                                        }
                 
-                                       .carousel-container,
+                                       .our-office-section .carousel-container,
                                        .address-card {
                                            min-height: 350px;
                                        }
@@ -911,12 +911,12 @@ header {
                                            font-size: 2.2rem;
                                        }
                 
-                                       .carousel-container,
+                                       .our-office-section .carousel-container,
                                        .address-card{
                                            min-height: 300px;
                                        }
                 
-                                       .carousel-btn {
+                                       .our-office-section .carousel-btn {
                                            width: 40px;
                                            height: 40px;
                                        }
@@ -931,7 +931,7 @@ header {
                                            font-size: 1rem;
                                        }
                 
-                                       .carousel-container,
+                                      .our-office-section .carousel-container,
                                        .address-card {
                                            min-height: 250px;
                                        }
@@ -963,6 +963,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
