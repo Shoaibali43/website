@@ -121,7 +121,11 @@ body {
   #bg-image {
     display: block;
   }
+    .logo {
+    font-size: 2rem;
+    }
 }
+
 
 
 
