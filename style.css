@@ -725,7 +725,7 @@ header {
                                    }
                 
                                    /* Carousel Styles */
-                                   .our-office-section .carousel-container {
+                                   .carousel-container {
                                        position: relative;
                                        border-radius: 16px;
                                        overflow: hidden;
@@ -733,7 +733,7 @@ header {
                                        height: 400px;
                                    }
                 
-                                   .our-office-section .carousel {
+                                   .carousel {
                                        position: relative;
                                        width: 100%;
                                        height: 100%;
@@ -741,26 +741,26 @@ header {
                                        border-radius: 16px;
                                    }
                 
-                                   .our-office-section .carousel-inner {
+                                   .carousel-inner {
                                        display: flex;
                                        transition: transform 0.5s ease;
                                        height: 100%;
                                    }
                 
-                                  .our-office-section .carousel-item {
+                                  .carousel-item {
                                        min-width: 100%;
                                        height: 100%;
                                        position: relative;
                                    }
                 
-                                  .our-office-section .carousel-item img {
+                                 .carousel-item img {
                                        width: 100%;
                                        height: 100%;
                                        object-fit: cover;
                                        display: block;
                                    }
                 
-                                   .our-office-section .carousel-caption {
+                                   .carousel-caption {
                                        position: absolute;
                                        bottom: 0;
                                        left: 0;
@@ -771,7 +771,7 @@ header {
                                        text-align: center;
                                    }
                 
-                                  .our-office-section .carousel-controls {
+                                  .carousel-controls {
                                        position: absolute;
                                        bottom: 20px;
                                        left: 0;
@@ -782,7 +782,7 @@ header {
                                        z-index: 10;
                                    }
                 
-                                  .our-office-section .carousel-control {
+                                  .carousel-control {
                                        width: 12px;
                                        height: 12px;
                                        border-radius: 50%;
@@ -791,12 +791,12 @@ header {
                                        transition: all 0.3s ease;
                                    }
                 
-                                  .our-office-section .carousel-control.active {
+                                  .carousel-control.active {
                                        background: white;
                                        transform: scale(1.2);
                                    }
                 
-                                 .our-office-section .carousel-nav {
+                                 .carousel-nav {
                                        position: absolute;
                                        top: 50%;
                                        transform: translateY(-50%);
@@ -807,7 +807,7 @@ header {
                                        z-index: 10;
                                    }
                 
-                                 .our-office-section .carousel-btn {
+                                 .carousel-btn {
                                        width: 50px;
                                        height: 50px;
                                        border-radius: 50%;
@@ -820,7 +820,7 @@ header {
                                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                                    }
                 
-                                   .our-office-section .carousel-btn:hover {
+                                  .carousel-btn:hover {
                                        background: white;
                                        transform: scale(1.1);
                                    }
@@ -896,7 +896,7 @@ header {
                                            gap: 30px;
                                        }
                 
-                                       .our-office-section .carousel-container,
+                                       .carousel-container,
                                        .address-card {
                                            min-height: 350px;
                                        }
@@ -911,12 +911,12 @@ header {
                                            font-size: 2.2rem;
                                        }
                 
-                                       .our-office-section .carousel-container,
+                                       .carousel-container,
                                        .address-card{
                                            min-height: 300px;
                                        }
                 
-                                       .our-office-section .carousel-btn {
+                                       .carousel-btn {
                                            width: 40px;
                                            height: 40px;
                                        }
@@ -931,7 +931,7 @@ header {
                                            font-size: 1rem;
                                        }
                 
-                                      .our-office-section .carousel-container,
+                                      .carousel-container,
                                        .address-card {
                                            min-height: 250px;
                                        }
@@ -944,16 +944,6 @@ header {
                                            font-size: 1.5rem;
                                        }
                                    }
-.our-office-section,
-.faq-section {
-  position: relative;
-  z-index: 10;
-  background: white;
-  margin-top: 80px; /* ensures they’re below hero/header */
-  padding: 60px 20px;
-}
-
-
 
   footer {
       text-align: center;
@@ -963,6 +953,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
