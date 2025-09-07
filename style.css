@@ -725,7 +725,7 @@ header {
                                    }
                 
                                    /* Carousel Styles */
-                                   .carousel-container {
+                                   .our-office-section .carousel-container {
                                        position: relative;
                                        border-radius: 16px;
                                        overflow: hidden;
@@ -733,7 +733,7 @@ header {
                                        height: 400px;
                                    }
                 
-                                   .carousel {
+                                   .our-office-section .carousel {
                                        position: relative;
                                        width: 100%;
                                        height: 100%;
@@ -741,26 +741,26 @@ header {
                                        border-radius: 16px;
                                    }
                 
-                                   .carousel-inner {
+                                   .our-office-section .carousel-inner {
                                        display: flex;
                                        transition: transform 0.5s ease;
                                        height: 100%;
                                    }
                 
-                                   .carousel-item {
+                                  .our-office-section .carousel-item {
                                        min-width: 100%;
                                        height: 100%;
                                        position: relative;
                                    }
                 
-                                   .carousel-item img {
+                                  .our-office-section .carousel-item img {
                                        width: 100%;
                                        height: 100%;
                                        object-fit: cover;
                                        display: block;
                                    }
                 
-                                   .carousel-caption {
+                                   .our-office-section .carousel-caption {
                                        position: absolute;
                                        bottom: 0;
                                        left: 0;
@@ -771,7 +771,7 @@ header {
                                        text-align: center;
                                    }
                 
-                                   .carousel-controls {
+                                  .our-office-section .carousel-controls {
                                        position: absolute;
                                        bottom: 20px;
                                        left: 0;
@@ -782,7 +782,7 @@ header {
                                        z-index: 10;
                                    }
                 
-                                   .carousel-control {
+                                  .our-office-section .carousel-control {
                                        width: 12px;
                                        height: 12px;
                                        border-radius: 50%;
@@ -791,12 +791,12 @@ header {
                                        transition: all 0.3s ease;
                                    }
                 
-                                   .carousel-control.active {
+                                  .our-office-section .carousel-control.active {
                                        background: white;
                                        transform: scale(1.2);
                                    }
                 
-                                   .carousel-nav {
+                                 .our-office-section .carousel-nav {
                                        position: absolute;
                                        top: 50%;
                                        transform: translateY(-50%);
@@ -807,7 +807,7 @@ header {
                                        z-index: 10;
                                    }
                 
-                                   .carousel-btn {
+                                 .our-office-section .carousel-btn {
                                        width: 50px;
                                        height: 50px;
                                        border-radius: 50%;
@@ -820,7 +820,7 @@ header {
                                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
                                    }
                 
-                                   .carousel-btn:hover {
+                                   .our-office-section .carousel-btn:hover {
                                        background: white;
                                        transform: scale(1.1);
                                    }
@@ -963,6 +963,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
