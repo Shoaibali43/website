@@ -11,21 +11,16 @@
   <meta name="keywords" content="Baseej Holidays, Kashmir tours, Kashmir travel, Baseej travels, explore Kashmir, holiday packages, Kashmir tourism">
   <meta name="author" content="Baseej Holidays">
 
-  <!-- ✅ Open Graph (Facebook, Instagram, WhatsApp) -->
-  <meta property="og:title" content="Baseej Holidays | Explore Kashmir">
+    <meta property="og:title" content="Baseej Holidays | Explore Kashmir">
   <meta property="og:description" content="Plan your dream Kashmir holiday with Baseej Holidays. Explore the beauty, culture, and adventure of Kashmir.">
-  <meta property="og:image" content="images.png"> <!-- 🔄 replace with full URL of logo/preview image -->
-  <meta property="og:url" content="shoaibali43.github.io/website">
+  <meta property="og:image" content="images.png">   <meta property="og:url" content="shoaibali43.github.io/website">
   <meta property="og:type" content="website">
 
-  <!-- ✅ Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Baseej Holidays | Explore Kashmir">
   <meta name="twitter:description" content="Travel with Baseej Holidays – Explore the paradise of Kashmir with tailored packages.">
-  <meta name="twitter:image" content="images.png"> <!-- 🔄 replace with full image URL -->
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" type="image/png" href="images.png">
+  <meta name="twitter:image" content="images.png"> 
+    <link rel="icon" type="image/png" href="images.png">
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -38,8 +33,7 @@
 
 <body>
 
-    <!-- Top Contact Bar -->
-    <div class="top-bar">
+        <div class="top-bar">
         <span class="notification-bar" id="notification-bar">
         <i class="fas fa-circle-notch fa-spin"></i> Loading latest update...
         </span>
@@ -47,35 +41,29 @@
     </div>
 
 
-    <!-- Navigation -->
-<header>
+    <header>
   <nav class="navbar">
-    <!-- Left nav -->
-    <ul class="nav-left">
+        <ul class="nav-left">
       <li><a href="#">Home</a></li>
       <li><a href="#">Kashmir</a></li>
       <li><a href="#">Bali</a></li>
       <li><a href="#">Maldives</a></li>
     </ul>
 
-    <!-- Logo -->
-    <div class="logo">
+        <div class="logo">
       <img src="images.png" alt="Baseej Travels Logo">
       <span class="brand-name">Baseej Travels</span>
     </div>
 
-    <!-- Right nav (desktop) -->
-    <ul class="nav-right">
+        <ul class="nav-right">
       <li><a href="haza.html">About</a></li>
       <li><a href="helloaz.html">Analytics</a></li>
       <li><a href="form.html" class="btn-cta">Book Now</a></li>
     </ul>
 
-    <!-- Hamburger (mobile only) -->
-    <div class="menu-toggle">&#9776;</div>
+        <div class="menu-toggle">&#9776;</div>
 
-    <!-- Dropdown links (mobile only) -->
-    <div class="nav-links">
+        <div class="nav-links">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Kashmir</a></li>
@@ -169,7 +157,6 @@
             </div>
         </div>
     </section>
-<!-- why choose us? -->
         <section class="why-choose-us">
             <div class="containered">
                 <div class="section-headerd">
@@ -216,8 +203,7 @@
                 </div>
             </div>
         
-            <!-- Decorative elements -->
-            <div class="decoration decoration-1">
+                        <div class="decoration decoration-1">
                 <i class="fas fa-mountain"></i>
             </div>
             <div class="decoration decoration-2">
@@ -233,8 +219,7 @@
                 </div>
         
                 <div class="office-content">
-                    <!-- Office Carousel -->
-                    <div class="carousel-container">
+                                        <div class="carousel-container">
                         <div class="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item">
@@ -274,8 +259,7 @@
                         </div>
                     </div>
         
-                    <!-- Address Card -->
-                    <div class="address-card">
+                                        <div class="address-card">
                         <h3>Visit Us</h3>
         
                         <div class="address-info">
@@ -320,8 +304,7 @@
     </footer>
 
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/+917006949411" class="whatsapp-btn" target="_blank">
+        <a href="https://wa.me/+917006949411" class="whatsapp-btn" target="_blank">
         <i class="fa-brands fa-whatsapp"></i> Chat with us
     </a>
 
@@ -332,7 +315,6 @@
             colors = ["blue", "green", "yellow", "red"],
             text = document.querySelector(".text");
 
-        // Generator (iterate from 0-3)
         function* generator() {
             var index = 0;
             while (true) {
@@ -344,7 +326,6 @@
             }
         }
 
-        // Printing effect
         function printChar(word) {
             let i = 0;
             text.innerHTML = "";
@@ -360,7 +341,6 @@
             }, 500);
         }
 
-        // Deleting effect
         function deleteChar() {
             let word = text.innerHTML;
             let i = word.length - 1;
@@ -376,12 +356,10 @@
             }, 300);
         }
 
-        // Initializing generator
         let gen = generator();
 
         printChar(words[gen.next().value]);
 
-   // Toggle dropdown with animation
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
@@ -404,11 +382,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let currentIndex = 0;
             const itemCount = carouselItems.length;
 
-            // Update carousel position
+           
             function updateCarousel() {
                 carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-                // Update controls
+                
                 carouselControls.forEach((control, index) => {
                     if (index === currentIndex) {
                         control.classList.add('active');
@@ -418,23 +396,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // Next slide
+            
             function nextSlide() {
                 currentIndex = (currentIndex + 1) % itemCount;
                 updateCarousel();
             }
 
-            // Previous slide
+           
             function prevSlide() {
                 currentIndex = (currentIndex - 1 + itemCount) % itemCount;
                 updateCarousel();
             }
 
-            // Add event listeners
+            
             nextBtn.addEventListener('click', nextSlide);
             prevBtn.addEventListener('click', prevSlide);
 
-            // Add click events to controls
+            
             carouselControls.forEach((control, index) => {
                 control.addEventListener('click', () => {
                     currentIndex = index;
@@ -442,7 +420,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
-            // Auto slide
+            
             setInterval(nextSlide, 5000);
         });
     
@@ -458,13 +436,13 @@ document.addEventListener("DOMContentLoaded", function () {
             measurementId: "G-VXV8N2CQF9"
         };
 
-        // Initialize Firebase
+        
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
         const notificationBar = document.getElementById("notification-bar");
 
-        // Real-time listener for latest notification
+       
         db.collection("marqueeNotifications")
             .orderBy("timestamp", "desc")
             .limit(1)
@@ -498,18 +476,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let index = 0;
 
     function changeText() {
-        // Slide out to the left
+        
         gsap.to(heading, {
             x: -200,
             opacity: 0,
             duration: 0.8,
-            ease: "power3.in", // smooth ease out
+            ease: "power3.in",
             onComplete: () => {
-                // Update text
+                
                 index = (index + 1) % texts.length;
                 heading.textContent = texts[index];
 
-                // Slide in from right with bounce effect
+                
                 gsap.fromTo(heading,
                     { x: 200, opacity: 0 },
                     { x: 0, opacity: 1, duration: 0.9, ease: "elastic.out(1, 0.5)" }
@@ -518,7 +496,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Change text every 3 seconds
     setInterval(changeText, 3000);
 </script>
 
