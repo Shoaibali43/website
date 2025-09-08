@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const particlesContainer = document.getElementById('particles-container');
 
-    // Function to generate particles
+
     function generateParticles() {
         for (let i = 0; i < 100; i++) {
             const particle = document.createElement('div');
@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Start particle generation
+    
     generateParticles();
 
-    // Redirect to index.html after 10 seconds
+    
     setTimeout(() => {
         window.location.href = 'main.html';
     }, 8000);
