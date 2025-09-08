@@ -11,20 +11,20 @@
   <meta name="keywords" content="Baseej Holidays, Kashmir tours, Kashmir travel, Baseej travels, explore Kashmir, holiday packages, Kashmir tourism">
   <meta name="author" content="Baseej Holidays">
 
-  <!-- ✅ Open Graph (Facebook, Instagram, WhatsApp) -->
+  
   <meta property="og:title" content="Baseej Holidays | Explore Kashmir">
   <meta property="og:description" content="Plan your dream Kashmir holiday with Baseej Holidays. Explore the beauty, culture, and adventure of Kashmir.">
-  <meta property="og:image" content="images.png"> <!-- 🔄 replace with full URL of logo/preview image -->
+  <meta property="og:image" content="images.png"> 
   <meta property="og:url" content="shoaibali43.github.io/website">
   <meta property="og:type" content="website">
 
-  <!-- ✅ Twitter Cards -->
+  
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Baseej Holidays | Explore Kashmir">
   <meta name="twitter:description" content="Travel with Baseej Holidays – Explore the paradise of Kashmir with tailored packages.">
-  <meta name="twitter:image" content="images.png"> <!-- 🔄 replace with full image URL -->
+  <meta name="twitter:image" content="images.png"> 
 
-  <!-- ✅ Favicon -->
+  
   <link rel="icon" type="image/png" href="images.png">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -38,7 +38,7 @@
 
         body {
            background-image: url('woods.jpg');
-           background-size: cover; /* Make image cover the entire area */
+           background-size: cover; 
     background-repeat: no-repeat;
     background-position: center center;
            min-height: 100vh;
@@ -247,7 +247,7 @@
             font-size: 0.9rem;
         }
 
-        /* Destination Cards */
+        
         .destination-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -448,17 +448,17 @@
             </div>
 
             <div class="legend" id="legend">
-                <!-- Legend will be populated by JavaScript -->
+                
             </div>
         </div>
 
         <div class="stats" id="stats">
-            <!-- Stats will be populated by JavaScript -->
+            
         </div>
 
-        <!-- Destination Cards -->
+        
         <div class="destination-cards" id="destinationCards">
-            <!-- Cards will be populated by JavaScript -->
+            
         </div>
     </div>
 
@@ -467,7 +467,7 @@
     </footer>
 
     <script>
-        // Destination data with initial values
+        
         const destinations = [
             {
                 name: 'Bali',
@@ -503,7 +503,7 @@
             }
         ];
 
-        // Function to get or set last update date
+       
         function getLastUpdateDate() {
             const lastUpdate = localStorage.getItem('lastUpdate');
             if (!lastUpdate) {
@@ -514,21 +514,21 @@
             return lastUpdate;
         }
 
-        // Function to check if we need to update values
+        
         function shouldUpdateValues() {
             const lastUpdate = getLastUpdateDate();
             const today = new Date().toDateString();
             return lastUpdate !== today;
         }
 
-        // Function to update values with random fluctuations
+        
         function updateValues() {
             const today = new Date().toDateString();
 
             destinations.forEach(destination => {
-                // Add random value between 1-5
+                
                 const randomChange = Math.floor(Math.random() * 5) + 1;
-                // Randomly decide to add or subtract (75% chance to add)
+                
                 const shouldAdd = Math.random() > 0.25;
 
                 if (shouldAdd) {
@@ -538,10 +538,10 @@
                 }
             });
 
-            // Update last update date
+            
             localStorage.setItem('lastUpdate', today);
 
-            // Show notification about update
+            
             const dataInfo = document.getElementById('dataInfo');
             dataInfo.innerHTML = `<i class="fas fa-sync-alt"></i> Data updated today with random fluctuations`;
             dataInfo.style.animation = 'pulse 1s';
@@ -551,14 +551,14 @@
             }, 1000);
         }
 
-        // Check and update values if needed
+        
         if (shouldUpdateValues()) {
             updateValues();
         }
 
-        // Initialize the page
+       
         document.addEventListener('DOMContentLoaded', function () {
-            // Populate legend
+           
             const legend = document.getElementById('legend');
             destinations.forEach(dest => {
                 const percentage = ((dest.value / getTotal()) * 100).toFixed(1);
@@ -571,7 +571,7 @@
                 `;
             });
 
-            // Populate stats
+            
             const stats = document.getElementById('stats');
             destinations.forEach(dest => {
                 const percentage = ((dest.value / getTotal()) * 100).toFixed(1);
@@ -583,7 +583,7 @@
                 `;
             });
 
-            // Populate destination cards
+            
             const destinationCards = document.getElementById('destinationCards');
             destinations.forEach(dest => {
                 const percentage = ((dest.value / getTotal()) * 100).toFixed(1);
@@ -615,10 +615,10 @@
                 `;
             });
 
-            // Update total bookings
+           
             document.getElementById('totalBookings').textContent = getTotal().toLocaleString();
 
-            // Initialize chart
+           
             initChart();
         });
 
@@ -636,27 +636,27 @@
             const centerY = canvas.height / 2;
             const radius = Math.min(centerX, centerY) - 10;
 
-            // Animation variables
+            
             let animationProgress = 0;
             const animationDuration = 2000;
             const startTime = Date.now();
 
-            // Draw the pie chart with animation
+            
             function drawAnimatedPieChart() {
-                // Clear the canvas
+               
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Calculate animation progress
+               
                 const currentTime = Date.now();
                 animationProgress = Math.min(1, (currentTime - startTime) / animationDuration);
 
-                // Draw each segment with animation
+                
                 let startAngle = -0.5 * Math.PI;
 
                 for (let i = 0; i < destinations.length; i++) {
                     const segmentAngle = (destinations[i].value / total) * 2 * Math.PI * animationProgress;
 
-                    // Draw segment
+                    
                     ctx.beginPath();
                     ctx.moveTo(centerX, centerY);
                     ctx.arc(centerX, centerY, radius, startAngle, startAngle + segmentAngle);
@@ -664,7 +664,7 @@
                     ctx.fillStyle = destinations[i].color;
                     ctx.fill();
 
-                    // Add subtle shadow for depth
+                    
                     ctx.shadowColor = 'rgba(0, 0, 0, 0.2)';
                     ctx.shadowBlur = 10;
                     ctx.shadowOffsetX = 3;
@@ -675,7 +675,7 @@
                     ctx.shadowOffsetX = 0;
                     ctx.shadowOffsetY = 0;
 
-                    // Add outline
+                    
                     ctx.strokeStyle = 'white';
                     ctx.lineWidth = 2;
                     ctx.stroke();
@@ -683,40 +683,40 @@
                     startAngle += segmentAngle;
                 }
 
-                // Continue animation until complete
+                
                 if (animationProgress < 1) {
                     requestAnimationFrame(drawAnimatedPieChart);
                 }
             }
 
-            // Initial draw
+           
             drawAnimatedPieChart();
 
-            // Add hover effects
+            
             canvas.addEventListener('mousemove', function (event) {
                 const rect = canvas.getBoundingClientRect();
                 const x = event.clientX - rect.left;
                 const y = event.clientY - rect.top;
 
-                // Calculate angle from center
+                
                 const distanceFromCenter = Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2));
 
                 if (distanceFromCenter <= radius) {
-                    // Calculate angle in radians
+                    
                     let angle = Math.atan2(y - centerY, x - centerX);
                     if (angle < 0) angle += 2 * Math.PI;
 
-                    // Adjust for starting at top
+                    
                     angle += 0.5 * Math.PI;
                     if (angle > 2 * Math.PI) angle -= 2 * Math.PI;
 
-                    // Find which segment is being hovered
+                    
                     let cumulativeAngle = 0;
                     for (let i = 0; i < destinations.length; i++) {
                         const segmentAngle = (destinations[i].value / total) * 2 * Math.PI;
 
                         if (angle >= cumulativeAngle && angle <= cumulativeAngle + segmentAngle) {
-                            // Show tooltip
+                           
                             const percentage = ((destinations[i].value / total) * 100).toFixed(1);
                             tooltip.innerHTML = `
                                 <div class="tooltip-title">${destinations[i].name}</div>
@@ -727,11 +727,11 @@
                             tooltip.style.left = (x + 10) + 'px';
                             tooltip.style.top = (y - 10) + 'px';
 
-                            // Add glow effect to the segment
+                            
                             ctx.clearRect(0, 0, canvas.width, canvas.height);
                             drawAnimatedPieChart();
 
-                            // Draw highlighted segment with glow
+                            
                             let highlightStartAngle = -0.5 * Math.PI;
                             for (let j = 0; j < i; j++) {
                                 highlightStartAngle += (destinations[j].value / total) * 2 * Math.PI;
@@ -739,7 +739,7 @@
 
                             const highlightEndAngle = highlightStartAngle + (destinations[i].value / total) * 2 * Math.PI;
 
-                            // Draw highlight with glow
+                            
                             ctx.beginPath();
                             ctx.moveTo(centerX, centerY);
                             ctx.arc(centerX, centerY, radius + 3, highlightStartAngle, highlightEndAngle);
