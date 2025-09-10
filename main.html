@@ -24,10 +24,12 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
    
 </head>
 
@@ -54,6 +56,7 @@
       <img src="images.png" alt="Baseej Travels Logo">
       <span class="brand-name">Baseej Travels</span>
     </div>
+
 
         <ul class="nav-right">
       <li><a href="haza.html">About</a></li>
@@ -157,6 +160,29 @@
             </div>
         </div>
     </section>
+
+<section>
+    <div class="map-containersa">
+        <div id="map"></div>
+        <div class="location-info">
+            <h2>Srinagar</h2>
+            <p>Known as "Paradise on Earth", Srinagar is famous for its beautiful Dal Lake, houseboats, and Mughal
+                gardens.</p>
+        </div>
+        <div class="cycle-indicator">
+            <div class="cycle-dot active" id="dot-0"></div>
+            <div class="cycle-dot" id="dot-1"></div>
+            <div class="cycle-dot" id="dot-2"></div>
+            <div class="cycle-dot" id="dot-3"></div>
+            <div class="cycle-dot" id="dot-4"></div>
+        </div>
+        <div class="destination-counter">
+            Destination: <span id="current-dest">1</span>/5
+        </div>
+    </div>
+    </section>
+
+
         <section class="why-choose-us">
             <div class="containered">
                 <div class="section-headerd">
@@ -210,6 +236,7 @@
                 <i class="fas fa-umbrella-beach"></i>
             </div>
         </section>
+
 
         <section class="our-office-section">
             <div class="containerem">
@@ -298,6 +325,42 @@
             </div>
         </section>
 
+<section class="donor-section">
+    <div class="section-header">
+        <h2>Our Generous Supporters</h2>
+        <p>We are grateful to everyone helping us in our mission.</p>
+    </div>
+    <div id="totalDonationBox" style="
+             text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 2rem auto;
+            background: rgba(0, 247, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            display: inline-block;
+            transition: all 0.3s ease;
+            max-width: 90%;
+        ">
+        Calculating total donations...
+    </div>
+
+    <div class="donor-grid" id="donorGrid">
+        <p>Loading donors...</p>
+    </div>
+
+    <!-- ✅ QR Code Section -->
+    <div class="qr-section">
+        <h3>Scan to Donate</h3>
+        <img src="qrcode.png" alt="QR Code for Donation">
+        <p style="margin-top: 0.8rem; color: #a0a9cb;">Donate instantly by scanning this QR code, and watch your name
+            shine on our website within hours!</p>
+    </div>
+</section>
 
     <footer>
         <p>&copy; 2025 Baseej Holidays. All rights reserved.</p>
@@ -311,6 +374,163 @@
 </body>
 
 <script>
+
+    
+     const map = L.map('map', {
+            zoomControl: false,
+            attributionControl: false,
+            scrollWheelZoom: false,
+            doubleClickZoom: false,
+            boxZoom: false,
+            dragging: false,
+            zoomAnimation: true,
+            fadeAnimation: true,
+            markerZoomAnimation: true
+        }).setView([34.0837, 74.7973], 12); 
+
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+        }).addTo(map);
+
+      
+        const locations = [
+            {
+                name: "Srinagar",
+                coords: [34.0837, 74.7973],
+                zoom: 12,
+                info: "Known as 'Paradise on Earth', Srinagar is famous for its beautiful Dal Lake, houseboats, and Mughal gardens."
+            },
+            {
+                name: "Jammu",
+                coords: [32.7266, 74.8570],
+                zoom: 13,
+                info: "Jammu is the winter capital of Jammu and Kashmir, known for its ancient temples and stunning landscapes."
+            },
+            {
+                name: "Ladakh",
+                coords: [34.1526, 77.5771],
+                zoom: 10,
+                info: "Ladakh is a high-altitude desert region renowned for its remote mountain beauty and Buddhist culture."
+            },
+            {
+                name: "Maldives",
+                coords: [3.2028, 73.2207],
+                zoom: 12,
+                info: "The Maldives is a tropical paradise with crystal-clear waters, white sandy beaches, and luxurious overwater bungalows."
+            },
+            {
+                name: "Bali",
+                coords: [-8.4095, 115.1889],
+                zoom: 10,
+                info: "Bali is known for its volcanic mountains, iconic rice paddies, beaches, and coral reefs, as well as its spiritual temples."
+            }
+        ];
+
+    
+        const markers = locations.map(location => {
+            const marker = L.marker(location.coords, {
+                icon: L.divIcon({
+                    className: 'pulse-marker-containersa',
+                    html: '<div class="pulse-marker"></div>',
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10]
+                })
+            }).addTo(map);
+
+            return marker;
+        });
+
+    
+        const pathLines = [];
+        for (let i = 0; i < locations.length; i++) {
+            const nextIndex = (i + 1) % locations.length;
+            const line = L.polyline([
+                [locations[i].coords[0], locations[i].coords[1]],
+                [locations[nextIndex].coords[0], locations[nextIndex].coords[1]]
+            ], {
+                color: '#1527c9',
+                weight: 3,
+                opacity: 0.7,
+                dashArray: '10, 10',
+                className: 'animated-path'
+            }).addTo(map);
+
+            pathLines.push(line);
+        }
+
+       
+        const locationInfo = document.querySelector('.location-info');
+        const dots = [
+            document.getElementById('dot-0'),
+            document.getElementById('dot-1'),
+            document.getElementById('dot-2'),
+            document.getElementById('dot-3'),
+            document.getElementById('dot-4')
+        ];
+        const currentDestElement = document.getElementById('current-dest');
+
+        let currentIndex = 0;
+        let transitionInterval;
+
+    
+        function updateCycleIndicator(index) {
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+        
+            currentDestElement.textContent = index + 1;
+        }
+
+    
+        function animateToLocation(index) {
+            const location = locations[index];
+
+        
+            locationInfo.querySelector('h2').textContent = location.name;
+            locationInfo.querySelector('p').textContent = location.info;
+
+            
+            updateCycleIndicator(index);
+
+            
+            map.flyTo(location.coords, location.zoom, {
+                duration: 2,
+                easeLinearity: 0.25,
+                animate: true
+            });
+
+            
+            markers[index].bounce({
+                duration: 2000,
+                height: 50
+            });
+
+           
+            currentIndex = index;
+        }
+
+        
+        function startTransition() {
+            transitionInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % locations.length;
+                animateToLocation(currentIndex);
+            }, 5000); 
+        }
+
+        
+        startTransition();
+
+       
+        window.addEventListener('resize', () => {
+            map.invalidateSize();
+        });
+    
     const words = ["Experience", "Voyage", "Adventure", "Journey"],
             colors = ["blue", "green", "yellow", "red"],
             text = document.querySelector(".text");
@@ -497,6 +717,61 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     setInterval(changeText, 3000);
+
+
+    async function fetchDonors() {
+            const donorGrid = document.getElementById("donorGrid");
+            const totalDonationBox = document.getElementById("totalDonationBox");
+            donorGrid.innerHTML = "<p>Loading donors...</p>";
+
+            try {
+                const snapshot = await db.collection("donors").orderBy("joinDate", "desc").get();
+                donorGrid.innerHTML = "";
+
+                if (snapshot.empty) {
+                    donorGrid.innerHTML = "<p>No donors found yet.</p>";
+                    totalDonationBox.innerText = "Total Donations: Rs. 0";
+                    return;
+                }
+
+                let totalAmount = 0;
+
+                snapshot.forEach(doc => {
+                    const donor = doc.data();
+                    const initials = donor.name ? donor.name.split(" ").map(n => n[0]).join("") : "U";
+                    const joinDate = donor.joinDate ? donor.joinDate.toDate().toLocaleDateString("en-US", {
+                        year: "numeric", month: "short"
+                    }) : "N/A";
+                    const amount = donor.amount ? Number(donor.amount) : 0;
+
+                    totalAmount += amount;
+
+                    const card = document.createElement("div");
+                    card.className = "donor-card";
+                    card.innerHTML = `
+            <div class="donor-avatar">${initials}</div>
+            <div class="donor-info">
+              <div class="donor-name">${donor.name}</div>
+              <div class="donor-id">ID: ${donor.donorId}</div>
+              <div class="donor-meta">
+                <span>In ${joinDate}</span>
+                ${amount ? `<span>Rs. ${amount}</span>` : ""}
+              </div>
+            </div>
+          `;
+                    donorGrid.appendChild(card);
+                });
+
+                // ✅ Show total donations
+                totalDonationBox.innerText = "Total Donations Received: Rs. " + totalAmount.toLocaleString();
+
+            } catch (error) {
+                donorGrid.innerHTML = "<p>Error loading donors. Check console.</p>";
+                console.error("Firestore Error:", error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchDonors);
 </script>
 
 
