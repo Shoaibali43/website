@@ -1087,7 +1087,7 @@ header {
                                                                                                                                                         }
                                                                             
                                                                                                                                                         .section-header h2 {
-                                                                                                                                                            font-size: 2.5rem;
+                                                                                                                                                            font-size: 2.0rem;
                                                                                                                                                             color: #fff;
                                                                                                                                                             margin-bottom: 1rem;
                                                                                                                                                             background: linear-gradient(to right, #00f7ff, #ff00ea, #00f7ff);
@@ -1235,6 +1235,7 @@ header {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
 
   }
+
 
 
 
